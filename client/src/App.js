@@ -1,13 +1,24 @@
 import React, { Component } from 'react';
 import './App.css';
-import AppBarExample from './components/AppBar'
+import AppBarExample from './components/AppBar';
+import CardSearch from './components/CardSearch';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <AppBarExample />
-      </div>
+      <MuiThemeProvider>
+        <div>
+          <AppBarExample />
+          
+          <CardSearch />
+          
+       
+        
+         
+        </div>
+      </MuiThemeProvider>
     );
   }
 }

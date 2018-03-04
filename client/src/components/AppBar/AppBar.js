@@ -19,7 +19,7 @@ const muiTheme = getMuiTheme({
     color: "#D32F2F",
   },
   appBar: {
-    height: 150,
+    height: 50,
     color: "#D32F2F",
   },
 });
@@ -31,6 +31,7 @@ const muiTheme = getMuiTheme({
 const AppBarExample = () => (
   <MuiThemeProvider muiTheme={muiTheme}>  
   <AppBar
+    showMenuIconButton={false}
     title={<span style={styles.title}>Transparency</span>}
     onTitleClick={handleClick}
     iconElementRight={<FlatButton label="Sign In" />}
