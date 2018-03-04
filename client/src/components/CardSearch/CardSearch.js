@@ -25,7 +25,7 @@ const styles = {
 const Input = () => (
   <div>
     <TextField
-      floatingLabelText="Enter your search here"
+      floatingLabelText="Search by either Bill Name, Legislator Name, Donor Name or Zip Code"
       floatingLabelStyle={styles.floatingLabelStyle}
       floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
       fullWidth={true}
@@ -52,7 +52,7 @@ const CardSearch = () => (
   <Card>
     <CardHeader
       title="Search to see your legislators and donors side-by-side"
-      subtitle="Search by either Legislator, Zip Code, Donor Name or Bill number"
+      subtitle="Transparency"
       avatar="icon2.png"
     />
     <CardText>
