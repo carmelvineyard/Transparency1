@@ -11,12 +11,7 @@ class App extends Component {
       <MuiThemeProvider>
         <div>
           <AppBarExample />
-          
           <CardSearch />
-          
-       
-        
-         
         </div>
       </MuiThemeProvider>
     );
