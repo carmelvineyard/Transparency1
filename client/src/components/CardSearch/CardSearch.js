@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {Card, CardHeader, CardText} from 'material-ui/Card';
 import DropDownMenu from '../DropdownMenu';
-import ResultsCard from "../ResultsCard"
+import ResultsCard from "../ResultsCard";
+
 
 
 
@@ -31,7 +32,7 @@ class CardSearch extends Component{
             <ResultsCard />
             <br />
             <ResultsCard />
-            
+          
       </CardText>
     </Card>
     )
