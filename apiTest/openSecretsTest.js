@@ -1,3 +1,5 @@
+
+
 //SETUP VARIABLES
 //===============================================
 
@@ -27,10 +29,11 @@ function runQuery(queryURL) {
         method: "GET"
 
     }).done(function(respData) {
+        console.log("Mischief Managed!");
         console.log("queryURL: " + queryURL);
-        console.log(respData);
+        //console.log(respData);
         console.log("-----------------------------");
-
+        
         $("#well-section").html(respData);
     })
 }; //end runQuery
@@ -47,7 +50,7 @@ $("#clear-all").on("click", function() {
 $("#industryButton").on("click", function(event) {
     event.preventDefault();
     $("#well-section").empty();
-
+    legisIndInput = $("#industry-select").val();
     let searchURL = indBase;
 
     runQuery(searchURL);
@@ -57,17 +60,21 @@ $("#industryButton").on("click", function(event) {
 $("#contributorButton").on("click", function(event) {
     event.preventDefault();
     $("#well-section").empty();
-
+    legisContribInput = $("#contrib-select").val();
+    legisIndInput = $("#industry-select").val();
     let searchURL = contriBase;
+    let experimentURL = indBase;
 
     runQuery(searchURL);
+    runQuery(experimentURL);
+
 });
 
 //onClick for the legislatorButton
-$("#contributorButton").on("click", function(event) {
+$("#legislatorButton").on("click", function(event) {
     event.preventDefault();
     $("#well-section").empty();
-
+    getLegisInput = $("#legis-select").val();
     let searchURL = legisBase;
 
     runQuery(searchURL);
@@ -77,7 +84,7 @@ $("#contributorButton").on("click", function(event) {
 $("#stateButton").on("click", function(event) {
     event.preventDefault();
     $("#well-section").empty();
-
+    stateInput = $("#state-abbr-select").val();
     let searchURL = stateBase;
 
     runQuery(searchURL);
