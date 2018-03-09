@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
-import TextFieldSimple from '../TextFieldSimple';
+import TextFieldRegister from './TextFieldRegister';
 
 
-export default class SignInModal extends Component {
-  state = {open:false};
-  
+export default class RegisterModal extends Component {
+ componentWillReceiveProps(){
+     let status = this.props;
+ }
+ 
+    componentWillMount(){
+      this.state = {open:false};
+      
+  }
+
   handleOpen = () => {this.setState({open:true});}
+  
 
   handleClose = ()=> {this.setState({open:false});}
-
-  handleClick = ()=> {this.props=true};
-     
-
- 
 
   render() {
     const styles = {
@@ -29,28 +32,27 @@ export default class SignInModal extends Component {
         default={true}
         onClick={this.handleClose}
         />,
-        <FlatButton
-        label="Sign In"
-        primary={true}
-        keyboardFocused={true}
-        onClick={this.handleClose}
-        labelStyle={styles.labelStyle}
-        />
-        ];
-
+    <FlatButton
+      label="Register"
+      primary={true}
+      keyboardFocused={true}
+      onClick={this.handleClose}
+      labelStyle={styles.labelStyle}
+      
+    />,
+  ];
       return (
           <div className="container-fluid">
-          <FlatButton onClick={this.handleOpen} label="Sign In" />
+          <FlatButton onClick={this.handleOpen} label="Register" />
               <Dialog
-                  title="Sign in"
+                  title="Register"
                   actions={actions}
                   modal={false}
                   open={this.state.open}
                   onRequestClose={this.handleClose}
                   >
-            
-               <p>Don't have an account yet? <FlatButton onClick={this.handleClick} label="Register"/> </p>   
-             <TextFieldSimple />
+               <p>Already have an account? <FlatButton onClick={this.handleClosed} label="Sign In" /> </p>   
+             <TextFieldRegister />
                  
               </Dialog>
           </div>
