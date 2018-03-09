@@ -4,6 +4,7 @@ var bodyParser = require("body-parser");
 var path = require("path");
 var CryptoJS = require("crypto-js");
 var mysql = require("mysql");
+const mongoose = require("mongoose");
 //var materialize = require("materialize-css");
 var app = express();
 var PORT = 3002;
