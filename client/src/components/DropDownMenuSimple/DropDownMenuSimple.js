@@ -1,6 +1,8 @@
 import React from 'react';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
+import axios from "axios";
+
 
 const styles = {
   customWidth: {
@@ -15,10 +17,14 @@ export default class DropDownMenuSimple extends React.Component {
     this.state = ({value: 1,});
   }
 
+<<<<<<< HEAD:client/src/components/DropDownMenuSimple/DropDownMenuSimple.js
   handleChange = (event, index, value) => {
     this.setState({ value });
     this.props.onChange()
   }
+=======
+  handleChange = (event, index, value) => {this.setState({state: value})};
+>>>>>>> origin:client/src/components/DropdownMenu/DropDownMenu.js
 
   render() {
     return (
@@ -30,8 +36,13 @@ export default class DropDownMenuSimple extends React.Component {
           autoWidth={false}
           show="false"
         >
+<<<<<<< HEAD:client/src/components/DropDownMenuSimple/DropDownMenuSimple.js
           <MenuItem name='default' value={1} primaryText="Select a State" />
           <MenuItem name ='AL' value={2} primaryText="Alabama" />
+=======
+          <MenuItem name='default' value={1} primaryText="Select A State" />
+          <MenuItem name ='AL' value='AL' primaryText="Alabama" />
+>>>>>>> origin:client/src/components/DropdownMenu/DropDownMenu.js
           <MenuItem name ='AK' value={3} primaryText="Alaska" />
           <MenuItem name = 'AZ' value={4} primaryText="Arizona" />
           <MenuItem name = 'AR' value={5} primaryText="Arkansas" />

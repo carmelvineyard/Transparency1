@@ -1,7 +1,13 @@
 {
   "main.css": "static/css/main.83f30ce3.css",
   "main.css.map": "static/css/main.83f30ce3.css.map",
+<<<<<<< HEAD
   "main.js": "static/js/main.81760e5b.js",
   "main.js.map": "static/js/main.81760e5b.js.map",
   "static/media/capitolbldg.jpg": "static/media/capitolbldg.57b38029.jpg"
+=======
+  "main.js": "static/js/main.ace6ae26.js",
+  "main.js.map": "static/js/main.ace6ae26.js.map",
+  "static\\media\\capitolbldg.jpg": "static/media/capitolbldg.57b38029.jpg"
+>>>>>>> origin
 }
