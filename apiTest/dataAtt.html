@@ -1,0 +1,30 @@
+<!-- THIS IS LITERALLY COPIED FROM A W3SCHOOLS TRYIT/FIDDLE, HENCE THE VANILLA JAVASCRIPT
+	THE ID NUMBERS ARE PUT IN ATTRIBUTES THAT ARE NAMED WITH DATA-____. THEY ARE PUT TOGETHER IN A "DATASET" THAT WE GRAB THEM FROM LATER.
+	YES, THE VARIABLE ON LINE 21 IS NECESSARY, IT DID NOT WORK WITHOUT THE VARIABLE. 
+	WHEN CALLING THE DATA OUT FROM THE DATASET, ONE USES DATASET.____, WITH THE ____ BEING WHAT YOU PUT IN THE ___ FOR THE ORIGINAL NAME.
+-->
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to trigger a function that will output "Hello World" in a p element with id="demo".</p>
+
+<button onclick="myFunction()" data-pp="W000817" data-ops="N00033492" class="buttClass" id="button">Click me</button>
+
+<p id="demo"></p>
+<p id="demo2"></p>
+
+<script>
+function myFunction() {
+	var idNum = document.getElementById("button");
+    document.getElementById("demo").innerHTML = idNum.dataset.ops;
+ 	document.getElementById("demo2").innerHTML = idNum.dataset.pp;   
+}
+</script>
+<script src="https://code.jquery.com/jquery.js"></script>
+</body>
+</html>
+
+<!-- attempts to convert the code to jQuery have resulted in "cannot read property 'ops' of undefined".  -->
