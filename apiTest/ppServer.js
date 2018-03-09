@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Main route (20 bills most recently introduced by a single member. Also a simple Hello World Message)
-app.get("/", function(req, res) {
+app.get("/", function sponBills(req, res) {
   axios
     .get("https://api.propublica.org/congress/v1/members/W000817/bills/introduced.json", {
       headers: { "X-API-Key": "4N6ilo6LCdb7Gjmfg050VPVRB3tz10mpR5oAlNn2" }
