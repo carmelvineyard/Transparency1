@@ -4,6 +4,7 @@ import FlatButton from 'material-ui/FlatButton';
 
 
 export default class ResultsCard extends React.Component {
+  
 
   constructor(props) {
     super(props);

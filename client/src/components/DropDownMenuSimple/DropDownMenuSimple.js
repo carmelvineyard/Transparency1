@@ -14,23 +14,35 @@ export default class DropDownMenuSimple extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {value: 1};
+    this.state = ({value: 1,});
   }
 
+<<<<<<< HEAD:client/src/components/DropDownMenuSimple/DropDownMenuSimple.js
+  handleChange = (event, index, value) => {
+    this.setState({ value });
+    this.props.onChange()
+  }
+=======
   handleChange = (event, index, value) => {this.setState({state: value})};
+>>>>>>> origin:client/src/components/DropdownMenu/DropDownMenu.js
 
   render() {
     return (
       <div>
-        
         <DropDownMenu
           value={this.state.value}
-          onChange={this.handleChange}
+          onChange={this.props.onChange}
           style={styles.customWidth}
           autoWidth={false}
+          show="false"
         >
+<<<<<<< HEAD:client/src/components/DropDownMenuSimple/DropDownMenuSimple.js
+          <MenuItem name='default' value={1} primaryText="Select a State" />
+          <MenuItem name ='AL' value={2} primaryText="Alabama" />
+=======
           <MenuItem name='default' value={1} primaryText="Select A State" />
           <MenuItem name ='AL' value='AL' primaryText="Alabama" />
+>>>>>>> origin:client/src/components/DropdownMenu/DropDownMenu.js
           <MenuItem name ='AK' value={3} primaryText="Alaska" />
           <MenuItem name = 'AZ' value={4} primaryText="Arizona" />
           <MenuItem name = 'AR' value={5} primaryText="Arkansas" />
@@ -75,21 +87,6 @@ export default class DropDownMenuSimple extends React.Component {
           <MenuItem name = 'WV' value={44} primaryText="West Virginia" />
           <MenuItem name = 'WI' value={45} primaryText="Wisconsin" />
           <MenuItem name = 'WY' value={46} primaryText="Wyoming" />
-
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
         </DropDownMenu>
       </div>
     );
