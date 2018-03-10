@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default {
-    getSenators: (state) => {
-        return axios.get("/api/opensecrets", )
+    getSenators: (params) => {
+        return axios.get("/api/opensecrets", { params: this.state.value});
     }
 };
