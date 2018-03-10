@@ -1,5 +1,4 @@
 
-
 //SETUP VARIABLES
 //===============================================
 
@@ -29,14 +28,40 @@ function runQuery(queryURL) {
         method: "GET"
 
     }).done(function(respData) {
-        console.log("Mischief Managed!");
         console.log("queryURL: " + queryURL);
-        //console.log(respData);
+        console.log(respData);
         console.log("-----------------------------");
-        
+
         $("#well-section").html(respData);
     })
 }; //end runQuery
+
+function getSenetors(queryURL) {
+    //AJAX uses queryURL and GETs the JSON. Data is then stored in a variable called: "respData"
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+
+    }).done(function(respData) {
+        // var senetors = [];
+        var data = JSON.parse(respData);
+        var attr = "@attributes"
+        var senetorsData = data.response.legislator.slice(-2);
+        for (var i = 0; i < senetorsData.length; i++) {
+            var senetor = $("<p>");
+            senetor.html(senetorsData[i][attr].firstlast + "<br>" +
+                "Party: " + senetorsData[i][attr].party);
+            $("#well-section").append(senetor);
+        }
+
+        // senetors.push(respData);
+        console.log("queryURL: " + queryURL);
+        console.log(senetorsData);
+        console.log("-----------------------------");
+
+        
+    })
+}; 
 
 //METHODS
 //==================================================
@@ -50,7 +75,7 @@ $("#clear-all").on("click", function() {
 $("#industryButton").on("click", function(event) {
     event.preventDefault();
     $("#well-section").empty();
-    legisIndInput = $("#industry-select").val();
+
     let searchURL = indBase;
 
     runQuery(searchURL);
@@ -60,21 +85,17 @@ $("#industryButton").on("click", function(event) {
 $("#contributorButton").on("click", function(event) {
     event.preventDefault();
     $("#well-section").empty();
-    legisContribInput = $("#contrib-select").val();
-    legisIndInput = $("#industry-select").val();
+
     let searchURL = contriBase;
-    let experimentURL = indBase;
 
     runQuery(searchURL);
-    runQuery(experimentURL);
-
 });
 
 //onClick for the legislatorButton
-$("#legislatorButton").on("click", function(event) {
+$("#contributorButton").on("click", function(event) {
     event.preventDefault();
     $("#well-section").empty();
-    getLegisInput = $("#legis-select").val();
+
     let searchURL = legisBase;
 
     runQuery(searchURL);
@@ -84,8 +105,10 @@ $("#legislatorButton").on("click", function(event) {
 $("#stateButton").on("click", function(event) {
     event.preventDefault();
     $("#well-section").empty();
-    stateInput = $("#state-abbr-select").val();
+
     let searchURL = stateBase;
 
-    runQuery(searchURL);
+    getSenetors(searchURL);
+
+
 });
