@@ -35,7 +35,6 @@ export default class ResultsCard extends React.Component {
         <CardHeader
           title="URL Avatar"
           subtitle="Subtitle"
-          avatar="images/ok-128.jpg"
           actAsExpander={true}
           showExpandableButton={true}
         />
