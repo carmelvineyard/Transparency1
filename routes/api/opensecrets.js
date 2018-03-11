@@ -3,7 +3,7 @@ const articleController = require("../../controllers/opensecretsController");
 
 
 router
-  .route("/senators")
-  .get(articleController.findSenators);
+  .route("/")
+  .get(articleController.findAll);
 
 module.exports = router;
