@@ -13,6 +13,8 @@ export default class ResultsCard extends React.Component {
     };
   }
 
+
+
   handleExpandChange = (expanded) => {
     this.setState({expanded: expanded});
   };
@@ -30,11 +32,12 @@ export default class ResultsCard extends React.Component {
   };
 
   render() {
+
     return (
       <Card expanded={this.state.expanded} onExpandChange={this.handleExpandChange}>
         <CardHeader
-          title="URL Avatar"
-          subtitle="Subtitle"
+          title={this.props.firstlast}
+          subtitle={this.props.party}
           actAsExpander={true}
           showExpandableButton={true}
         />
@@ -52,6 +55,7 @@ export default class ResultsCard extends React.Component {
           <FlatButton label="Reduce" onClick={this.handleReduce} />
         </CardActions>
       </Card>
+
     );
   }
 }

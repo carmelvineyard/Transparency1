@@ -2,6 +2,17 @@ import React, { Component } from 'react';
 import {Card, CardHeader, CardText} from 'material-ui/Card';
 import DropDownMenuSimple from '../DropDownMenuSimple/DropDownMenuSimple';
 import ResultsCard from "../ResultsCard";
+import API from '../../utils/API'
+
+let senators=[];
+
+API.getSenators()
+.then(response => {
+  senators = response.data.slice(-2);
+  console.log("API response", senators);
+})
+
+
 
 class CardSearch extends Component{
   
@@ -28,9 +39,8 @@ onChangeDropdown = ()=> {
           <DropDownMenuSimple onChange={this.onChangeDropdown}/>
            {this.state.show?
           <div>
-          <ResultsCard/>
+           {senators.map((senator, index) => (<ResultsCard key={index}  firstlast = {senator["@attributes"].firstlast} party = {senator["@attributes"].party}/>))} 
           <br />
-          <ResultsCard  />
           </div> 
            :null}
             </div>  
