@@ -7,7 +7,7 @@ const stateBase = "http://www.opensecrets.org/api/?method=getLegislators&output=
 module.exports = {
     findAll: function(req, res) {
       
-      const query = req.query;
+      const query = req.query; // { stateAbr: "GA" }
       console.log("test", query);
       axios
         .get(stateBase + query.stateAbr)

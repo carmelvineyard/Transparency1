@@ -1,59 +1,102 @@
 import React, { Component } from 'react';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
-import TextFieldSimple from '../TextFieldSimple';
+import TextFieldSignin from '../TextFieldSimple';
+import TextFieldSignup from '../RegisterModal/TextFieldRegister';
+import CircularProgress from 'material-ui/CircularProgress';
 
 
 export default class SignInModal extends Component {
-  state = {open:false};
-  
-  handleOpen = () => {this.setState({open:true});}
+  state = {
+    open: false,
+    isLoggedIn: true
+  };
 
-  handleClose = ()=> {this.setState({open:false});}
+  handleOpen = () => { this.setState({ open: true }); }
 
-  handleClick = ()=> {this.props=true};
-     
+  handleClose = () => { this.setState({ open: false }); }
 
- 
+  signUp = () => {
+    // TODO
+    // Register
+    // Signin
+
+    this.setState({
+      isLoggedIn: false
+    });
+
+    // isLoggedIn
+    // true = Login
+    // false = Register
+  };
+
+  signIn = () => {
+    // TODO
+    // UI Sign in
+    this.setState({
+      isLoggedIn: true
+    });
+  };
+
+
+
 
   render() {
     const styles = {
       labelStyle: {
-          color: '#2196F3'
+        color: '#2196F3'
       }
     }
 
-      const actions = [
-        <FlatButton
+    // isLoggedIn
+    // true = Login
+    // false = Register
+
+    const {
+      isLoggedIn,
+      open
+    } = this.state;
+
+
+    const actions = [
+      <FlatButton
         label="Cancel"
         default={true}
         onClick={this.handleClose}
-        />,
-        <FlatButton
-        label="Sign In"
+      />,
+      <FlatButton
+        label={isLoggedIn ? "Sign In" : "Sign up"}
         primary={true}
         keyboardFocused={true}
         onClick={this.handleClose}
         labelStyle={styles.labelStyle}
-        />
-        ];
+      />
+    ];
 
-      return (
-          <div className="container-fluid">
-          <FlatButton onClick={this.handleOpen} label="Sign In" />
-              <Dialog
-                  title="Sign in"
-                  actions={actions}
-                  modal={false}
-                  open={this.state.open}
-                  onRequestClose={this.handleClose}
-                  >
-            
-               <p>Don't have an account yet? <FlatButton onClick={this.handleClick} label="Register"/> </p>   
-             <TextFieldSimple />
-                 
-              </Dialog>
-          </div>
-      );
+    
+
+    return (
+      <div className="container-fluid">
+        <FlatButton onClick={this.handleOpen} label="Sign In" />
+        <Dialog
+          title={isLoggedIn ? "Sign in" : "Sign up"}
+          actions={actions}
+          modal={false}
+          open={open}
+          onRequestClose={this.handleClose}
+        >
+
+          {isLoggedIn
+            ? <p>Don't have an account yet? <FlatButton onClick={this.signUp} label="Register" /> </p>
+            :
+            <p>Already have an account? <FlatButton onClick={this.signIn} label="Signin" /> </p>}
+
+          {isLoggedIn ? <TextFieldSignin /> : <TextFieldSignup />}
+
+
+
+        </Dialog>
+      </div>
+    );
   }
 }
