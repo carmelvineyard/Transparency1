@@ -55,7 +55,7 @@ export default class DropDownMenuSimple extends Component {
           id="DropDown"
         >
           <MenuItem name='default' value={1} primaryText="Select a State" />
-          <MenuItem name ='AL' value={"AL"} primaryText="Alabama" />
+          <MenuItem name = 'AL' value={"AL"} primaryText="Alabama" />
           <MenuItem name ='AK' value={"AK"} primaryText="Alaska" />
           <MenuItem name = 'AZ' value={"AZ"} primaryText="Arizona" />
           <MenuItem name = 'AR' value={'AR'} primaryText="Arkansas" />
