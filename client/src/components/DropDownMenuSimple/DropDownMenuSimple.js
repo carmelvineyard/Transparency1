@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
+import API from '../../utils/API.js';
+import CardSearch from '../CardSearch/CardSearch.js';
 
 
 const styles = {
@@ -15,19 +17,32 @@ export default class DropDownMenuSimple extends Component {
 
   constructor(props) {
     super(props);
-    this.state = ({value: 1,});
+    this.state = ({
+      usState: "", 
+      senatorData: {}
+  });
   }
 
   
 
   handleChange = (event, index, value) => {
-    this.setState({ name: value });
+    this.setState({usState: value});
     this.props.onChange();
-    console.log(value);
+    this.props.onChange(value);
+  }
+
+  callOpenSecrets = (usState) => {
+    API.getSenators(usState)
+    .then ((response) => {
+      const senators = response.data.slice(-2);
+        this.setState({
+          senatorData: senators
+        })
+    })
   }
 
   render() {
-    
+
     return (
       <div>
         <DropDownMenu
@@ -91,6 +106,7 @@ export default class DropDownMenuSimple extends Component {
           <MenuItem name = 'WI' value={'WI'} primaryText="Wisconsin" />
           <MenuItem name = 'WY' value={'WY'} primaryText="Wyoming" />
         </DropDownMenu>
+        
       </div>
     );
   }

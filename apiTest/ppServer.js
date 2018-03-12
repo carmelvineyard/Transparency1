@@ -16,6 +16,8 @@ var axios = require("axios");
 var Congress = require("propublica-congress-node");
 var client = new Congress("4N6ilo6LCdb7Gjmfg050VPVRB3tz10mpR5oAlNn2");
 
+var membID = "W000817";
+
 // Initialize Express
 var app = express();
 
@@ -23,9 +25,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Main route (20 bills most recently introduced by a single member. Also a simple Hello World Message)
-app.get("/", function sponBills(req, res) {
+app.get("/sponBills", function sponBills(req, res) {
+  var sponURL = ("https://api.propublica.org/congress/v1/members/" + membID + "/bills/introduced.json");
   axios
-    .get("https://api.propublica.org/congress/v1/members/W000817/bills/introduced.json", {
+    .get("sponURL", {
       headers: { "X-API-Key": "4N6ilo6LCdb7Gjmfg050VPVRB3tz10mpR5oAlNn2" }
     })
     .then(function(resp) {

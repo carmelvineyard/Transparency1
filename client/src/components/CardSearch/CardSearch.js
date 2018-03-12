@@ -6,26 +6,32 @@ import API from '../../utils/API'
 
 let senators=[];
 
-API.getSenators()
-.then(response => {
-  senators = response.data.slice(-2);
-  console.log("API response", senators);
-})
-
-
 
 class CardSearch extends Component{
   
-state = {show: false};
+  constructor(props) {
+    super(props);
+    this.state = ({
+      usState: "", 
+      senatorData: []
+    });
+  }
 
 
+onChangeDropdown = (usState)=> {
 
-onChangeDropdown = ()=> {
-  this.setState({show:true});
+  API.getSenators(usState)
+    .then(response => {
+      senators = response.data.slice(-2);
+      this.setState({senatorData: senators});
+
+  })
+
 }
  
   render()
-  {
+  { 
+
     return (
       <Card>
         <CardHeader
@@ -36,14 +42,16 @@ onChangeDropdown = ()=> {
         <CardText>
           <div>
 
-          <DropDownMenuSimple onChange={this.onChangeDropdown}/>
-           {this.state.show?
-          <div>
-           {senators.map((senator, index) => (<ResultsCard key={index}  firstlast = {senator["@attributes"].firstlast} party = {senator["@attributes"].party}/>))} 
-          <br />
-          </div> 
-           :null}
-            </div>  
+            <DropDownMenuSimple onChange={this.onChangeDropdown}/>
+            
+            {
+            <div>
+            {this.state.senatorData.map((senator, index) => (<ResultsCard key={index}  firstlast = {senator["@attributes"].firstlast} party = {senator["@attributes"].party}/>))} 
+            <br />
+            </div> 
+            }
+
+          </div>  
        </CardText>
     </Card>
     )

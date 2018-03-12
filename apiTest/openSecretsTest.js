@@ -36,27 +36,27 @@ function runQuery(queryURL) {
     })
 }; //end runQuery
 
-function getSenetors(queryURL) {
+function getSenators(queryURL) {
     //AJAX uses queryURL and GETs the JSON. Data is then stored in a variable called: "respData"
     $.ajax({
         url: queryURL,
         method: "GET"
 
     }).done(function(respData) {
-        // var senetors = [];
+        // var senators = [];
         var data = JSON.parse(respData);
         var attr = "@attributes"
-        var senetorsData = data.response.legislator.slice(-2);
-        for (var i = 0; i < senetorsData.length; i++) {
-            var senetor = $("<p>");
-            senetor.html(senetorsData[i][attr].firstlast + "<br>" +
-                "Party: " + senetorsData[i][attr].party);
-            $("#well-section").append(senetor);
+        var senatorsData = data.response.legislator.slice(-2);
+        for (var i = 0; i < senatorsData.length; i++) {
+            var senator = $("<p>");
+            senator.html(senatorsData[i][attr].firstlast + "<br>" +
+                "Party: " + senatorsData[i][attr].party);
+            $("#well-section").append(senator);
         }
 
         // senetors.push(respData);
         console.log("queryURL: " + queryURL);
-        console.log(senetorsData);
+        console.log(senatorsData);
         console.log("-----------------------------");
 
         
