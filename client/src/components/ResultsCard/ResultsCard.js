@@ -43,7 +43,7 @@ export default class ResultsCard extends React.Component {
         />
         
        
-        <CardTitle title={this.props.firstlast} subtitle={this.props.party} expandable={true} />
+        <CardTitle title={this.props.phone} subtitle={this.props.website} expandable={true} />
         <CardText expandable={true}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.

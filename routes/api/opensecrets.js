@@ -1,9 +1,17 @@
 const router = require("express").Router();
-const articleController = require("../../controllers/opensecretsController");
+const opensecretsController = require("../../controllers/opensecretsController");
 
 
 router
   .route("/")
-  .get(articleController.findAll);
+  .get(opensecretsController.findSenators);
+
+router
+  .route("/industries")
+  .get(opensecretsController.findTopIndustries);
+
+router
+  .route("/individuals")
+  .get(opensecretsController.findTopContributors);
 
 module.exports = router;

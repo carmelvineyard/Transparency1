@@ -8,7 +8,6 @@ import CircularProgress from 'material-ui/CircularProgress';
 
 let senators = [];
 
-
 class CardSearch extends Component {
 
   constructor(props) {
@@ -50,7 +49,7 @@ class CardSearch extends Component {
 
             {
               <div>
-                {this.state.senatorData.map((senator, index) => (<ResultsCard key={index} firstlast={senator["@attributes"].firstlast} party={senator["@attributes"].party} />))}
+                {this.state.senatorData.map((senator, index) => (<ResultsCard key={index} firstlast={senator["@attributes"].firstlast} party={senator["@attributes"].party} website={senator["@attributes"].website} phone={senator["@attributes"].phone} />))}
                 <br />
                 
               </div>
