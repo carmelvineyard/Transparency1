@@ -29,6 +29,8 @@ export default class TextFieldSimple extends Component {
           underlineStyle={styles.underlineStyle}
           underlineFocusStyle={styles.underlineFocusStyle}
         />
+        <br />
+        <br />
         <TextField
         hintText="Enter Email"
         floatingLabelText="Enter Email"
@@ -36,6 +38,8 @@ export default class TextFieldSimple extends Component {
         underlineStyle={styles.underlineStyle}
         underlineFocusStyle={styles.underlineFocusStyle}
          />
+         <br />
+         <br />
       <TextField
       hintText="Enter Zip Code"
       floatingLabelText="Enter Zip Code"
@@ -53,6 +57,8 @@ export default class TextFieldSimple extends Component {
           underlineStyle={styles.underlineStyle}
           underlineFocusStyle={styles.underlineFocusStyle}
         />
+        <br />
+        <br />
         <TextField
           hintText="Confirm Password"
           floatingLabelText="Password"
@@ -61,7 +67,10 @@ export default class TextFieldSimple extends Component {
           underlineStyle={styles.underlineStyle}
           underlineFocusStyle={styles.underlineFocusStyle}
         />
-      
+        <br />
+        <br />
+        <br />
+        <br />
         </div>
     );
   }

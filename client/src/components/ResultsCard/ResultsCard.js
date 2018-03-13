@@ -43,7 +43,7 @@ export default class ResultsCard extends React.Component {
         />
         
        
-        <CardTitle title="Card title" subtitle="Card subtitle" expandable={true} />
+        <CardTitle title={this.props.firstlast} subtitle={this.props.party} expandable={true} />
         <CardText expandable={true}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
@@ -54,7 +54,9 @@ export default class ResultsCard extends React.Component {
           <FlatButton label="Expand" onClick={this.handleExpand} />
           <FlatButton label="Reduce" onClick={this.handleReduce} />
         </CardActions>
+       
       </Card>
+      
 
     );
   }

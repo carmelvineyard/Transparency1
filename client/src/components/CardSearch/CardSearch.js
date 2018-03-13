@@ -1,59 +1,66 @@
 import React, { Component } from 'react';
-import {Card, CardHeader, CardText} from 'material-ui/Card';
+import { Card, CardHeader, CardText } from 'material-ui/Card';
 import DropDownMenuSimple from '../DropDownMenuSimple/DropDownMenuSimple';
 import ResultsCard from "../ResultsCard";
 import API from '../../utils/API'
+import CircularProgress from 'material-ui/CircularProgress';
 
-let senators=[];
+
+let senators = [];
 
 
-class CardSearch extends Component{
-  
+class CardSearch extends Component {
+
   constructor(props) {
     super(props);
     this.state = ({
-      usState: "", 
+      usState: "",
       senatorData: []
     });
   }
 
 
-onChangeDropdown = (usState)=> {
+  onChangeDropdown = (usState) => {
 
-  API.getSenators(usState)
-    .then(response => {
-      senators = response.data.slice(-2);
-      this.setState({senatorData: senators});
+    this.setState({
+      status:"pending"
+    });
 
-  })
+    API.getSenators(usState)
+      .then(response => {
+        senators = response.data.slice(-2);
+        this.setState({ senatorData: senators, status: "completed" });
+      })
+  }
 
-}
- 
-  render()
-  { 
+  render() {
 
     return (
       <Card>
+
         <CardHeader
-         title="Choose a state to see senators and donors side-by-side"
+          title="Choose a state to see senators and donors side-by-side"
           subtitle="Transparency"
           avatar="icon2.png"
         />
         <CardText>
           <div>
 
-            <DropDownMenuSimple onChange={this.onChangeDropdown}/>
-            
+            <DropDownMenuSimple onChange={this.onChangeDropdown} />
+
             {
-            <div>
-            {this.state.senatorData.map((senator, index) => (<ResultsCard key={index}  firstlast = {senator["@attributes"].firstlast} party = {senator["@attributes"].party}/>))} 
-            <br />
-            </div> 
+              <div>
+                {this.state.senatorData.map((senator, index) => (<ResultsCard key={index} firstlast={senator["@attributes"].firstlast} party={senator["@attributes"].party} />))}
+                <br />
+                
+              </div>
             }
 
-          </div>  
-       </CardText>
-    </Card>
+            { this.state.status === "pending" ? <CircularProgress /> : ""}
+
+          </div>
+        </CardText>
+      </Card>
     )
   }
 }

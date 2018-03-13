@@ -5,6 +5,7 @@ import API from '../../utils/API.js';
 import CardSearch from '../CardSearch/CardSearch.js';
 
 
+
 const styles = {
   customWidth: {
     width: 450,
@@ -18,7 +19,7 @@ export default class DropDownMenuSimple extends Component {
   constructor(props) {
     super(props);
     this.state = ({
-      usState: "", 
+      usState: 1, 
       senatorData: {}
   });
   }
@@ -31,22 +32,15 @@ export default class DropDownMenuSimple extends Component {
     this.props.onChange(value);
   }
 
-  callOpenSecrets = (usState) => {
-    API.getSenators(usState)
-    .then ((response) => {
-      const senators = response.data.slice(-2);
-        this.setState({
-          senatorData: senators
-        })
-    })
-  }
+
 
   render() {
+
 
     return (
       <div>
         <DropDownMenu
-          value={this.state.value}
+          value={this.state.usState}
          // onChange={this.props.onChange}
           onChange={this.handleChange}
           style={styles.customWidth}
@@ -54,8 +48,8 @@ export default class DropDownMenuSimple extends Component {
           show="false"
           id="DropDown"
         >
-          <MenuItem name='default' value={1} primaryText="Select a State" />
-          <MenuItem name ='AL' value={"AL"} primaryText="Alabama" />
+          <MenuItem  value={1} primaryText="Select a State" />
+          <MenuItem name = 'AL' value={"AL"} primaryText="Alabama" />
           <MenuItem name ='AK' value={"AK"} primaryText="Alaska" />
           <MenuItem name = 'AZ' value={"AZ"} primaryText="Arizona" />
           <MenuItem name = 'AR' value={'AR'} primaryText="Arkansas" />
