@@ -26,10 +26,7 @@ app.get("*", function(req, res) {
 mongoose.Promise = global.Promise;
 // Connect to the Mongo DB
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/transparency",
-  {
-    useMongoClient: true
-  }
+  process.env.MONGODB_URI || "mongodb://localhost/transparency"
 );
 
 app.listen(PORT, function() {
