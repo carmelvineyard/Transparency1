@@ -52,6 +52,7 @@ class CardSearch extends Component {
               <div>
                 {this.state.senatorData.map((senator, index) => (<ResultsCard key={index} firstlast={senator["@attributes"].firstlast} party={senator["@attributes"].party} />))}
                 <br />
+                
               </div>
             }
 
