@@ -28,6 +28,30 @@ import API from './utils/API.js'
 // {individuals.map((individual, index) => (<List key={index} name={individual["@attributes"].org_name} total={individual["@attributes"].total} />))}
 
 
+///////////////////////////////////////
+
+// let billsCo = [];
+
+// API.getBillsCo()
+//   .then(response => {
+//     billsCo = response.data.bills
+//     console.log(billsCo)
+//   })
+
+// {billsCo.map((bill, index) => (<InsertComp key={index} />))}
+
+
+///////////////////////////////////////
+
+// let billsIntroduced = [];
+
+// API.getBillsIntroduced()
+//   .then(response => {
+//     billsIntroduced = response.data.bills
+//     console.log(billsIntroduced)
+//   })
+
+// {billsIntroduced.map((bill, index) => (<InsertComp key={index} />))}
 
 class App extends Component {
   render() {

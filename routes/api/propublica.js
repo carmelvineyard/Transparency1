@@ -1,10 +1,13 @@
 const router = require("express").Router();
-const articleController = require("../../controllers/propublicaController");
+const propublicaController = require("../../controllers/propublicaController");
 
 
 router
-  .route("/senators")
-  .get(articleController.sponBills)
-  .get(articleController.coSponBills);
+  .route("/billsCo")
+  .get(propublicaController.findBillsCo);
+
+router
+  .route("/billsIntroduced")
+  .get(propublicaController.findIntroducedBills);
 
 module.exports = router;
