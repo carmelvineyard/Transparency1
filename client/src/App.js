@@ -23,6 +23,7 @@ import API from './utils/API.js'
 // API.getIndividuals()
 //   .then(response => {
 //     individuals = response.data.contributor
+//     console.log(individuals)
 //   })
 
 // {individuals.map((individual, index) => (<List key={index} name={individual["@attributes"].org_name} total={individual["@attributes"].total} />))}
@@ -38,7 +39,7 @@ import API from './utils/API.js'
 //     console.log(billsCo)
 //   })
 
-// {billsCo.map((bill, index) => (<InsertComp key={index} />))}
+// {billsCo.map((cobill, index) => (<InsertComp key={index} number={cobill.number} title={cobill.short_title} url={cobill.congressdotgov_url}/>))}
 
 
 ///////////////////////////////////////
@@ -51,7 +52,7 @@ import API from './utils/API.js'
 //     console.log(billsIntroduced)
 //   })
 
-// {billsIntroduced.map((bill, index) => (<InsertComp key={index} />))}
+// {billsIntroduced.map((bill, index) => (<InsertComp key={index} number={bill.number} title={bill.short_title} url={bill.congressdotgov_url} />))}
 
 class App extends Component {
   render() {
