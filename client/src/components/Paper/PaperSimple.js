@@ -5,7 +5,7 @@ import TableIndustry from '../TableSimple/TableIndustry';
 
 const style = {
   height:300,
-  width: 400,
+  width: 800,
   margin: 20,
   textAlign: 'center',
   display: 'inline-block',
@@ -13,7 +13,7 @@ const style = {
 
 const PaperContributor = () => (
     <Paper style={style} zDepth={1}>
-    <TableContributor />
+    
     </Paper>
 );
 
