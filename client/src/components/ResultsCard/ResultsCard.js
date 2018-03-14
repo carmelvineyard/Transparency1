@@ -1,7 +1,8 @@
 import React from 'react';
 import {Card, CardActions, CardHeader, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
-import TableSimple from '../TableSimple/TableSimple';
+import PaperIndustry from '../Paper/PaperIndustry';
+import PaperContributor from '../Paper/PaperContributor';
 
 export default class ResultsCard extends React.Component {
 
@@ -12,7 +13,6 @@ export default class ResultsCard extends React.Component {
     };
   }
 
- 
 
   handleExpandChange = (expanded) => {
     this.setState({expanded: expanded});
@@ -39,13 +39,20 @@ export default class ResultsCard extends React.Component {
           subtitle={this.props.party}
           actAsExpander={true}
           showExpandableButton={true}
+          titleStyle={{ fontSize: '23px' }} 
         />
         
        
-        <CardTitle title={this.props.phone} subtitle={this.props.website} expandable={true} />
+        <CardTitle 
+        titleStyle={{ fontSize: '20px' }}
+        title={this.props.phone} 
+        subtitle= {<a href = {this.props.website}> {this.props.website} </a>}
+        expandable={true} />
+
         <CardText expandable={true}>
             <div>
-            <TableSimple />
+            <PaperContributor/>
+            <PaperIndustry/>
             </div>
         </CardText>
         <CardActions>

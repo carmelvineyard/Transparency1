@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
-import API from '../../utils/API.js';
-import CardSearch from '../CardSearch/CardSearch.js';
-
 
 
 const styles = {
@@ -12,10 +9,8 @@ const styles = {
   },
 };
 
-
 export default class DropDownMenuSimple extends Component {
  
-
   constructor(props) {
     super(props);
     this.state = ({
@@ -25,7 +20,6 @@ export default class DropDownMenuSimple extends Component {
   }
 
   
-
   handleChange = (event, index, value) => {
     this.setState({usState: value});
     this.props.onChange();
