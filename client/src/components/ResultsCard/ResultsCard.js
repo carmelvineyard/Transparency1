@@ -1,10 +1,9 @@
 import React from 'react';
 import {Card, CardActions, CardHeader, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
-
+import TableSimple from '../TableSimple/TableSimple';
 
 export default class ResultsCard extends React.Component {
-  
 
   constructor(props) {
     super(props);
@@ -13,7 +12,7 @@ export default class ResultsCard extends React.Component {
     };
   }
 
-
+ 
 
   handleExpandChange = (expanded) => {
     this.setState({expanded: expanded});
@@ -45,10 +44,9 @@ export default class ResultsCard extends React.Component {
        
         <CardTitle title={this.props.phone} subtitle={this.props.website} expandable={true} />
         <CardText expandable={true}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-          Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-          Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+            <div>
+            <TableSimple />
+            </div>
         </CardText>
         <CardActions>
           <FlatButton label="Expand" onClick={this.handleExpand} />
