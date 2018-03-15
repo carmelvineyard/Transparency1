@@ -7,10 +7,10 @@ import SignInModal from '../SignInModal';
 
 
 const styles = {
-  labelStyle: {
-       color: '#ffffff'
-    },
-  }
+  labelStyle: 
+  {color: '#ffffff' }
+} 
+  
 
 
 const muiTheme = getMuiTheme({
