@@ -1,7 +1,5 @@
 import React from 'react';
 import Paper from 'material-ui/Paper';
-import TableContributor from '../TableSimple/TableContributor';
-import TableIndustry from '../TableSimple/TableIndustry';
 
 const style = {
   height:300,

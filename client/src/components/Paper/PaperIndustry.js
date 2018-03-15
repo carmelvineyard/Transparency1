@@ -1,11 +1,10 @@
 import React from 'react';
 import Paper from 'material-ui/Paper';
-import TableContributor from '../TableSimple/TableContributor';
 import TableIndustry from '../TableSimple/TableIndustry';
 
 const style = {
   height:600,
-  width: 400,
+  width: 450,
   margin: 20,
   textAlign: 'center',
   display: 'inline-block',

@@ -3,7 +3,7 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import TextFieldSignin from '../TextFieldSimple';
 import TextFieldSignup from '../RegisterModal/TextFieldRegister';
-import CircularProgress from 'material-ui/CircularProgress';
+
 
 
 export default class SignInModal extends Component {
