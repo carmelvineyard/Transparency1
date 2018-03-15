@@ -3,11 +3,12 @@ import {Card, CardActions, CardHeader, CardTitle, CardText} from 'material-ui/Ca
 import FlatButton from 'material-ui/FlatButton';
 import PaperIndustry from '../Paper/PaperIndustry';
 import PaperContributor from '../Paper/PaperContributor';
-import PaperSimple from "../Paper/PaperSimple";
 import CardBills from "../CardBills/CardBills"
 
 
+
 export default class ResultsCard extends React.Component {
+  
 
   constructor(props) {
     super(props);
@@ -16,6 +17,7 @@ export default class ResultsCard extends React.Component {
     };
   }
 
+  
 
   handleExpandChange = (expanded) => {
     this.setState({expanded: expanded});
@@ -33,20 +35,26 @@ export default class ResultsCard extends React.Component {
     this.setState({expanded: false});
   };
 
-  render() {
 
+  render() {
+    
     return (
+      
       <div>
-      <Card expanded={this.state.expanded} onExpandChange={this.handleExpandChange}>
+      <Card 
+      
+      expanded={this.state.expanded} 
+      onExpandChange={this.handleExpandChange}>
         <CardHeader
+          avatar="https://www.congress.gov/img/member/c000567.jpg"
           title={this.props.firstlast}
-          subtitle={this.props.party}
+          subtitle={this.props.party === "R" ? "Republican" : "Democrat"}
           actAsExpander={true}
           showExpandableButton={true}
-          titleStyle={{ fontSize: '23px' }} 
+          titleStyle={{ fontSize: '20px' }} 
         />
         <CardTitle 
-        titleStyle={{ fontSize: '20px' }}
+        titleStyle={{ fontSize: '18px' }}
         title={this.props.phone} 
         subtitle= {<a href = {this.props.website}> {this.props.website} </a>}
         expandable={true} />
@@ -62,6 +70,8 @@ export default class ResultsCard extends React.Component {
           <FlatButton label="Reduce" onClick={this.handleReduce} />
         </CardActions>
       </Card>
+      <br />
+      <br />
 
       
 </div>

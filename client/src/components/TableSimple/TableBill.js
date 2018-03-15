@@ -14,12 +14,9 @@ let billsIntroduced = [];
 API.getBillsIntroduced()
   .then(response => {
     billsIntroduced = response.data.bills
-    console.log(billsIntroduced)
   })
 
 
-  
- 
 export default class TableBill extends Component {
 
     state = {
@@ -33,7 +30,7 @@ export default class TableBill extends Component {
         deselectOnClickaway: true,
         displayRowCheckbox: false,
         showCheckboxes: false,
-        height: '300px'
+        height: '1000px'
       };
 
 render() {
@@ -61,16 +58,12 @@ return (
 
     <TableBody
      displayRowCheckbox={this.state.showCheckboxes}>
-
-
         {billsIntroduced.map((bill, index) => 
             (<TableRow key={index}>
             <TableRowColumn>{bill.number}</TableRowColumn> 
             <TableRowColumn> {<a href={bill.congressdotgov_url}> {bill.short_title} </a>} </TableRowColumn>
              </TableRow>
             ))}
-
-
 
     </TableBody>
   </Table> 

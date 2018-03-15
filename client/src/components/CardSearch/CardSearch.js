@@ -18,7 +18,7 @@ class CardSearch extends Component {
     });
   }
 
-
+ 
   onChangeDropdown = (usState) => {
 
     this.setState({
@@ -35,11 +35,14 @@ class CardSearch extends Component {
   render() {
 
     return (
-      <Card>
+      <Card 
+        style={{
+        backgroundColor: '#efefef',
+      }}>
 
         <CardHeader
           title="Choose a state to see senators and donors side-by-side"
-          subtitle="Transparency"
+          subtitle="Transparency in Government"
           avatar="icon2.png"
         />
         <CardText>
@@ -49,13 +52,18 @@ class CardSearch extends Component {
 
             {
               <div>
-              <br />
-                {this.state.senatorData.map((senator, index) => (<ResultsCard key={index} firstlast={senator["@attributes"].firstlast} party={senator["@attributes"].party} website={senator["@attributes"].website} phone={senator["@attributes"].phone} />))}
+               <br />
+                {this.state.senatorData.map((senator, index) => (
+                 <ResultsCard key={index} 
+                  firstlast={senator["@attributes"].firstlast} 
+                  party={senator["@attributes"].party} 
+                  website={senator["@attributes"].website} 
+                  phone={senator["@attributes"].phone} />))}
                 <br />
               </div>
             }
 
-            { this.state.status === "pending" ? <CircularProgress /> : ""}
+            { this.state.status === "pending" ? <CircularProgress  color={"#0e649d"} size={20} /> : ""}
 
           </div>
         </CardText>

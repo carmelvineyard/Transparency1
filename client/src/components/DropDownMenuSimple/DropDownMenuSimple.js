@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
-
+import {blue600} from 'material-ui/styles/colors.js';
 
 const styles = {
   customWidth: {
     width: 450,
-  },
+  }
 };
 
 export default class DropDownMenuSimple extends Component {
@@ -41,6 +41,9 @@ export default class DropDownMenuSimple extends Component {
           autoWidth={false}
           show="false"
           id="DropDown"
+          underlineStyle={{ borderColor: '#0e649d' }}
+          iconStyle={{ fill: '#0e649d' }}
+          labelStyle={{ color: '#0e649d' }}
         >
           <MenuItem  value={1} primaryText="Select a State" />
           <MenuItem name = 'AL' value={"AL"} primaryText="Alabama" />

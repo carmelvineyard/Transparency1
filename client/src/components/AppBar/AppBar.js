@@ -4,17 +4,12 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import SignInModal from '../SignInModal';
 
-function handleClick() {
-  alert('onClick triggered on the title component');
-}
+
 
 const styles = {
-  title: {
-    cursor: 'pointer',
-  },
   labelStyle: {
        color: '#ffffff'
-    }
+    },
   }
 
 
@@ -23,7 +18,7 @@ const muiTheme = getMuiTheme({
     color: "#D32F2F",
   },
   appBar: {
-    height: 50,
+    height: 60,
     color: "#D32F2F",
   }
   
@@ -38,10 +33,11 @@ const AppBarExample = () => (
   <AppBar
     showMenuIconButton={false}
     title={<span style={styles.title}>Transparency</span>}
-    onTitleClick={handleClick}
     iconElementRight={ 
-      <SignInModal label="Sign In" />
-      }
+     
+      <SignInModal 
+      label="Sign In"/>}
+      
   />
  
   </MuiThemeProvider>
