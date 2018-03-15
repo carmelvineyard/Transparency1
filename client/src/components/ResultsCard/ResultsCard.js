@@ -46,7 +46,11 @@ export default class ResultsCard extends React.Component {
       expanded={this.state.expanded} 
       onExpandChange={this.handleExpandChange}>
         <CardHeader
-          avatar="https://www.congress.gov/img/member/c000567.jpg"
+          avatar={
+            <img style={{ width: 80}} alt="Senator" src="https://www.congress.gov/img/member/c000567.jpg" />
+          }
+          
+           
           title={this.props.firstlast}
           subtitle={this.props.party === "R" ? "Republican" : "Democrat"}
           actAsExpander={true}
