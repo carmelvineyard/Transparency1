@@ -1,6 +1,5 @@
 import React from 'react';
-import {Card, CardActions, CardHeader, CardTitle, CardText} from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
+import {Card, CardHeader, CardTitle, CardText} from 'material-ui/Card';
 import TableBill from "../TableSimple/TableBill"
 
 
@@ -40,19 +39,16 @@ return (
           actAsExpander={true}
           showExpandableButton={true}
           titleStyle={{ fontSize: '16px' }} 
+         
         />
         <CardTitle 
-       
         expandable={true} />
         <CardText expandable={true}>
             <div>
             <TableBill />
             </div>
         </CardText>
-        <CardActions>
-          <FlatButton label="Expand" onClick={this.handleExpand} />
-          <FlatButton label="Reduce" onClick={this.handleReduce} />
-        </CardActions>
+        
       </Card>
      </div> 
 )
