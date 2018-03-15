@@ -8,6 +8,16 @@ import CircularProgress from 'material-ui/CircularProgress';
 
 let senators = [];
 
+let senator1 = {
+  "cid": "",
+  "bioguide_id": ""
+};
+
+let senator2 = {
+  "cid": "",
+  "bioguide_id": ""
+};
+
 class CardSearch extends Component {
 
   constructor(props) {
@@ -28,6 +38,10 @@ class CardSearch extends Component {
     API.getSenators(usState)
       .then(response => {
         senators = response.data.slice(-2);
+        senator1 = {"cid": senators[0]["@attributes"].cid, "bioguide_id": senators[0]["@attributes"].bioguide_id};
+        senator2 = {"cid": senators[1]["@attributes"].cid, "bioguide_id": senators[1]["@attributes"].bioguide_id};
+        console.log("Senator1: ", senator1);
+        console.log("Senator2: ", senator2);
         this.setState({ senatorData: senators, status: "completed" });
       })
   }
