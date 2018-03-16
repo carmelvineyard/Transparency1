@@ -29,9 +29,9 @@ export default class TextFieldSimple extends Component {
   handleSubmit = () => {
 
     const userInfo = { 
-    firstName: this.state.firstname,
+    firstName: this.state.firstName,
     email: this.state.email,
-    zipCode: this.state.zip, 
+    zipCode: this.state.zipCode, 
     password: this.state.password
     }
 
@@ -60,15 +60,15 @@ export default class TextFieldSimple extends Component {
         <TextField
           hintText="Enter First Name"
           floatingLabelText="Enter First Name"
-          id="firstname"
-          value={this.state.firstname}
+          id="firstName"
+          value={this.state.firstName}
           onChange={this.handleChange}
           floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
           underlineStyle={styles.underlineStyle}
           underlineFocusStyle={styles.underlineFocusStyle}
         />
-        <br />
-        <br />
+        
+       
         <TextField
         hintText="Enter Email"
         floatingLabelText="Enter Email"
@@ -79,20 +79,20 @@ export default class TextFieldSimple extends Component {
         underlineStyle={styles.underlineStyle}
         underlineFocusStyle={styles.underlineFocusStyle}
          />
-         <br />
-         <br />
+        
+         
       <TextField
       hintText="Enter Zip Code"
       floatingLabelText="Enter Zip Code"
-      id="zip"
-      value={this.state.zip}
+      id="zipCode"
+      value={this.state.zipCode}
       onChange={this.handleChange}
       floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
       underlineStyle={styles.underlineStyle}
       underlineFocusStyle={styles.underlineFocusStyle}
          />
-        <br />
-        <br />
+       
+       
         <TextField
           hintText="Create Password"
           floatingLabelText="Password"
@@ -104,8 +104,7 @@ export default class TextFieldSimple extends Component {
           underlineStyle={styles.underlineStyle}
           underlineFocusStyle={styles.underlineFocusStyle}
         />
-        <br />
-        <br />
+        
         <TextField
           hintText="Confirm Password"
           floatingLabelText="Password"
@@ -117,10 +116,8 @@ export default class TextFieldSimple extends Component {
           underlineStyle={styles.underlineStyle}
           underlineFocusStyle={styles.underlineFocusStyle}
         />
-        <br />
-        <br />
-        <br />
-        <br />
+        
+       
         </div>
     );
   }

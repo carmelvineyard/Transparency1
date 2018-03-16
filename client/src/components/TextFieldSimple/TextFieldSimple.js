@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
+import API from '../../utils/API';
 
 export default class TextFieldSimple extends Component {
   
@@ -13,10 +14,22 @@ export default class TextFieldSimple extends Component {
   }
 
   handleChange = (event) => {
+    console.log(event.target.id);
+    const name=event.target.id;
     this.setState({
-      value: event.target.value,
+      [name]: event.target.value,
     });
   };
+
+  handleSubmit = () => {
+
+    const userInfo = { 
+    email: this.state.email, 
+    password: this.state.password
+    }
+
+  API.newLogin (userInfo);
+  }
 
   
   render(){
@@ -40,7 +53,7 @@ export default class TextFieldSimple extends Component {
           hintText="Enter Email"
           floatingLabelText="Enter Email"
           id="email"
-          value={this.state.value}
+          value={this.state.email}
           onChange={this.handleChange}
           fullWidth={true}
           floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
@@ -54,7 +67,7 @@ export default class TextFieldSimple extends Component {
           floatingLabelText="Password"
           type="password"
           id="password"
-          value={this.state.value}
+          value={this.state.password}
           onChange={this.handleChange}
           fullWidth={true}
           floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
