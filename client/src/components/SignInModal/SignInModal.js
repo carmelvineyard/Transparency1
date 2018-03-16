@@ -73,7 +73,11 @@ export default class SignInModal extends Component {
       />
     ];
 
-    
+   const onClick = () => {
+      this.setState({
+        value:'',
+      });
+    };
 
     return (
       <div className="container-fluid">

@@ -3,7 +3,20 @@ import TextField from 'material-ui/TextField';
 
 export default class TextFieldSimple extends Component {
   
-  
+  constructor(props) {
+    super(props);
+
+    this.state = ({
+      email: '', 
+      password:''
+    });
+  }
+
+  handleChange = (event) => {
+    this.setState({
+      value: event.target.value,
+    });
+  };
 
   
   render(){
@@ -26,6 +39,9 @@ export default class TextFieldSimple extends Component {
         <TextField
           hintText="Enter Email"
           floatingLabelText="Enter Email"
+          id="email"
+          value={this.state.value}
+          onChange={this.handleChange}
           fullWidth={true}
           floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
           underlineStyle={styles.underlineStyle}
@@ -37,6 +53,9 @@ export default class TextFieldSimple extends Component {
           hintText="Enter Password"
           floatingLabelText="Password"
           type="password"
+          id="password"
+          value={this.state.value}
+          onChange={this.handleChange}
           fullWidth={true}
           floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
           underlineStyle={styles.underlineStyle}
