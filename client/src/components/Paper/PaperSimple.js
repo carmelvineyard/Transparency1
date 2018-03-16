@@ -3,7 +3,7 @@ import Paper from 'material-ui/Paper';
 
 const style = {
   height:300,
-  width: 800,
+  width: '100%',
   margin: 20,
   textAlign: 'center',
   display: 'inline-block',

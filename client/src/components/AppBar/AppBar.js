@@ -7,21 +7,19 @@ import SignInModal from '../SignInModal';
 
 
 const styles = {
-  labelStyle: 
-  {color: '#ffffff' }
-} 
-  
-
+  labelStyle: {
+    color:"#ffffff"
+  }
+ }
 
 const muiTheme = getMuiTheme({
   palette: {
     color: "#D32F2F",
   },
   appBar: {
-    height: 60,
+    height: 100,
     color: "#D32F2F",
   }
-  
 });
 
 /**
@@ -33,9 +31,9 @@ const AppBarExample = () => (
   <AppBar
     showMenuIconButton={false}
     title={<span style={styles.title}>Transparency</span>}
+    titleStyle={{ fontFamily: 'EB Garamond' , fontSize: 50}}  
     iconElementRight={ 
-     
-      <SignInModal 
+     <SignInModal 
       label="Sign In"/>}
       
   />

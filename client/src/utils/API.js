@@ -15,5 +15,8 @@ export default {
     },
     getBillsIntroduced: (memID) => {
         return axios.get("/api/propublica/billsIntroduced", {params: {memID: memID}})
+    },
+    newLogin: (loginData) => {
+        return axios.post("/api/login", loginData)
     }
 };
