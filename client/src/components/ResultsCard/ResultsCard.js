@@ -47,7 +47,7 @@ export default class ResultsCard extends React.Component {
       onExpandChange={this.handleExpandChange}>
         <CardHeader
           avatar={
-            <img style={{ width: 80}} alt="Senator" src="https://www.congress.gov/img/member/c000567.jpg" />
+            <img style={{ width: 80}} alt="Senator" src={`https://www.congress.gov/img/member/${this.props.avatarID.toLowerCase()}.jpg`} />
           }
           
            
