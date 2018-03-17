@@ -6,5 +6,4 @@ router
   .route("/")
   .post(loginController.create);
 
-
 module.exports = router;
