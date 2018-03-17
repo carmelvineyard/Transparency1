@@ -36,11 +36,9 @@ export default class SignInModal extends Component {
     };
     this.setState({ open: false });
     API.newLogin(userInfo);
-    console.log(userInfo);
   };
 
   handleChange = (event) => {
-    console.log(event.target.id);
     const name=event.target.id;
     this.setState({
       [name]: event.target.value,
