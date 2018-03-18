@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
-
+//import {blue600} from 'material-ui/styles/colors.js';
 
 const styles = {
   customWidth: {
@@ -18,7 +18,6 @@ export default class DropDownMenuSimple extends Component {
       senatorData: {}
   });
   }
-
   
   handleChange = (event, index, value) => {
     this.setState({usState: value});
@@ -26,16 +25,12 @@ export default class DropDownMenuSimple extends Component {
     this.props.onChange(value);
   }
 
-
-
   render() {
-
 
     return (
       <div>
         <DropDownMenu
           value={this.state.usState}
-         // onChange={this.props.onChange}
           onChange={this.handleChange}
           style={styles.customWidth}
           autoWidth={false}
@@ -47,7 +42,7 @@ export default class DropDownMenuSimple extends Component {
         >
           <MenuItem  value={1} primaryText="Select a State" />
           <MenuItem name = 'AL' value={"AL"} primaryText="Alabama" />
-          <MenuItem name ='AK' value={"AK"} primaryText="Alaska" />
+          <MenuItem name = 'AK' value={"AK"} primaryText="Alaska" />
           <MenuItem name = 'AZ' value={"AZ"} primaryText="Arizona" />
           <MenuItem name = 'AR' value={'AR'} primaryText="Arkansas" />
           <MenuItem name = 'CA' value={'CA'} primaryText="California" />

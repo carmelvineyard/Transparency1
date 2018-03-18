@@ -4,16 +4,19 @@ import TableIndustry from '../TableSimple/TableIndustry';
 
 const style = {
   height:600,
-  width: '45%',
-  margin: 10,
+  width: 450,
+  margin: 20,
   textAlign: 'center',
   display: 'inline-block',
 };
 
-const PaperContributor = () => (
-    <Paper style={style} zDepth={1}>
-    <TableIndustry />
-    </Paper>
-);
+const PaperIndustry = (props) => {
 
-export default PaperContributor;
+  return (
+    <Paper style={style} zDepth={1}>
+    <TableIndustry 
+      indusData= {props.indusData}/>
+    </Paper>)
+};
+
+export default PaperIndustry;

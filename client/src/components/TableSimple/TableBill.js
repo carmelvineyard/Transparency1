@@ -7,14 +7,6 @@ import {
   TableRow,
   TableRowColumn,
 } from 'material-ui/Table';
-import API from '../../utils/API'
-
-let billsIntroduced = [];
-
-API.getBillsIntroduced()
-  .then(response => {
-    billsIntroduced = response.data.bills
-  })
 
 
 export default class TableBill extends Component {
@@ -30,45 +22,44 @@ export default class TableBill extends Component {
         deselectOnClickaway: true,
         displayRowCheckbox: false,
         showCheckboxes: false,
-        height: '100%'
+        height: '1000px'
       };
 
-render() {
+  render() {
 
-return (
-<div>
-  <Table
-    selectable={this.state.selectable}
-    height={this.state.height}
-    fixedHeader={this.state.fixedHeader}
-    fixedFooter={this.state.fixedFooter}
-     >
+    return (
+      <div>
+        <Table
+          selectable={this.state.selectable}
+          height={this.state.height}
+          fixedHeader={this.state.fixedHeader}
+          fixedFooter={this.state.fixedFooter}
+          >
 
-    <TableHeader
-    displaySelectAll={this.state.showCheckboxes}
-    adjustForCheckbox={this.state.showCheckboxes}
-    enableSelectAll={this.state.enableSelectAll}
-     >
+          <TableHeader
+          displaySelectAll={this.state.showCheckboxes}
+          adjustForCheckbox={this.state.showCheckboxes}
+          enableSelectAll={this.state.enableSelectAll}
+          >
+            <TableRow>
+              <TableHeaderColumn>Bill Number</TableHeaderColumn>
+              <TableHeaderColumn>Bill Title</TableHeaderColumn>
+            </TableRow>
+          </TableHeader>
 
-      <TableRow>
-        <TableHeaderColumn>Bill Number</TableHeaderColumn>
-        <TableHeaderColumn>Bill Title</TableHeaderColumn>
-      </TableRow>
-    </TableHeader>
+          <TableBody
+          displayRowCheckbox={this.state.showCheckboxes}>
+              {this.props.introData.data.bills.map((bill, index) => 
+                  (<TableRow key={index}>
+                  <TableRowColumn>{bill.number}</TableRowColumn> 
+                  <TableRowColumn> {<a href={bill.congressdotgov_url} target="_blank"> {bill.short_title} </a>} </TableRowColumn>
+                  </TableRow>
+                  ))}
 
-    <TableBody
-     displayRowCheckbox={this.state.showCheckboxes}>
-        {billsIntroduced.map((bill, index) => 
-            (<TableRow key={index}>
-            <TableRowColumn>{bill.number}</TableRowColumn> 
-            <TableRowColumn> {<a href={bill.congressdotgov_url}> {bill.short_title} </a>} </TableRowColumn>
-             </TableRow>
-            ))}
+          </TableBody>
+        </Table> 
+      </div> 
+    )
 
-    </TableBody>
-  </Table> 
-  </div> 
-)
-
-}
+  }
 }
