@@ -29,28 +29,29 @@ export default class CardBills extends React.Component {
         this.setState({expanded: false});
       };
 
-render() {
-
-return (
-<div>
-      <Card expanded={this.state.expanded} onExpandChange={this.handleExpandChange}>
-        <CardHeader
-          title={"Bills Introduced by this Senator"}
-          actAsExpander={true}
-          showExpandableButton={true}
-          titleStyle={{ fontSize: '16px' }} 
-         
-        />
-        <CardTitle 
-        expandable={true} />
-        <CardText expandable={true}>
-            <div>
-            <TableBill />
-            </div>
-        </CardText>
-        
-      </Card>
-     </div> 
-)
-}
+  render() {
+  
+    return (
+      <div>
+        <Card expanded={this.state.expanded} onExpandChange={this.handleExpandChange}>
+          <CardHeader
+            title={"Bills Introduced by this Senator"}
+            actAsExpander={true}
+            showExpandableButton={true}
+            titleStyle={{ fontSize: '16px' }} 
+            
+          />
+          <CardTitle 
+            expandable={true} />
+          <CardText expandable={true}>
+              <div>
+              <TableBill 
+                introData= {this.props.introData}/>
+              </div>
+          </CardText>
+          
+        </Card>
+      </div> 
+    )
+  }
 }

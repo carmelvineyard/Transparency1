@@ -7,17 +7,8 @@ import {
   TableRow,
   TableRowColumn,
 } from 'material-ui/Table';
-import API from '../../utils/API'
-
-let industries = [];
-
-API.getIndustries()
-      .then(response => {
-        industries = response.data.industry
-      })
 
 
- 
 export default class TableIndustry extends Component {
 
     state = {
@@ -34,42 +25,40 @@ export default class TableIndustry extends Component {
         height: '600px'
       };
 
-render() {
+  render() {
 
-return (
-<div>
-  <Table
-    selectable={this.state.selectable}
-    height={this.state.height}
-    fixedHeader={this.state.fixedHeader}
-    fixedFooter={this.state.fixedFooter}
-     >
+    return (
+      <div>
+        <Table
+          selectable={this.state.selectable}
+          height={this.state.height}
+          fixedHeader={this.state.fixedHeader}
+          fixedFooter={this.state.fixedFooter}
+          >
 
-    <TableHeader
-    displaySelectAll={this.state.showCheckboxes}
-    adjustForCheckbox={this.state.showCheckboxes}
-    enableSelectAll={this.state.enableSelectAll}
-     >
+          <TableHeader
+          displaySelectAll={this.state.showCheckboxes}
+          adjustForCheckbox={this.state.showCheckboxes}
+          enableSelectAll={this.state.enableSelectAll}
+          >
+            <TableRow>
+              <TableHeaderColumn>Top Industries to Senator</TableHeaderColumn>
+              <TableHeaderColumn>Amount</TableHeaderColumn>
+            </TableRow>
+          </TableHeader>
 
-      <TableRow>
-        <TableHeaderColumn>Top Industries to Senator</TableHeaderColumn>
-        <TableHeaderColumn>Amount</TableHeaderColumn>
-      </TableRow>
-    </TableHeader>
+          <TableBody
+            displayRowCheckbox={this.state.showCheckboxes}>
+            {this.props.indusData.data.industry.map((indusData, index) => 
+                (<TableRow key={index}>
+                <TableRowColumn>{indusData["@attributes"].industry_name}</TableRowColumn>
+                <TableRowColumn>{"$" + indusData["@attributes"].total}</TableRowColumn>
+                </TableRow>
+                ))}
+          </TableBody>
+        </Table> 
+      </div> 
+    )
 
-    <TableBody
-     displayRowCheckbox={this.state.showCheckboxes}>
-
-     {industries.map((industry, index) => 
-        (<TableRow key={index}>
-        <TableRowColumn>{industry["@attributes"].industry_name}</TableRowColumn>
-        <TableRowColumn>{"$" + industry["@attributes"].total}</TableRowColumn>
-        </TableRow>
-        ))}
-    </TableBody>
-  </Table> 
-  </div> 
-)
-
-}
+  }
 }

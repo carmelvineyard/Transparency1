@@ -4,16 +4,19 @@ import TableContributor from '../TableSimple/TableContributor';
 
 const style = {
   height:600,
-  width: '45%',
-  margin: 10,
+  width: 450,
+  margin: 20,
   textAlign: 'center',
   display: 'inline-block',
 };
 
-const PaperContributor = () => (
+const PaperContributor = (props) => {
+
+  return (
     <Paper style={style} zDepth={1}>
-    <TableContributor />
-    </Paper>
-);
+      <TableContributor 
+        contribData= {props.contribData}/>
+    </Paper>)
+};
 
 export default PaperContributor;
