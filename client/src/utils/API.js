@@ -5,18 +5,15 @@ export default {
         return axios.get("/api/opensecrets", {params: {stateAbr: stateAbr}});
     },
     getIndustries: (senator) => {
-        return axios.get("/api/opensecrets/industries", {params: {senator: "N00033987"}});
+        return axios.get("/api/opensecrets/industries", {params: {senator: senator}});
     },
     getIndividuals: (senator) => {
-        return axios.get("/api/opensecrets/individuals", {params: {senator: "N00009888"}})
+        return axios.get("/api/opensecrets/individuals", {params: {senator: senator}})
     },
     getBillsCo: (memID) => {
-        return axios.get("/api/propublica/billsCo", {params: {memID: "B001260"}})
+        return axios.get("/api/propublica/billsCo", {params: {memID: memID}})
     },
     getBillsIntroduced: (memID) => {
-        return axios.get("/api/propublica/billsIntroduced", {params: {memID: "B001260"}})
-    },
-    newLogin: (loginData) => {
-        return axios.post("/api/login", loginData)
+        return axios.get("/api/propublica/billsIntroduced", {params: {memID: memID}})
     }
 };
