@@ -30,7 +30,7 @@ export default class TableBill extends Component {
         deselectOnClickaway: true,
         displayRowCheckbox: false,
         showCheckboxes: false,
-        height: '1000px'
+        height: '100%'
       };
 
 render() {

@@ -4,8 +4,8 @@ import TableIndustry from '../TableSimple/TableIndustry';
 
 const style = {
   height:600,
-  width: 450,
-  margin: 20,
+  width: '45%',
+  margin: 10,
   textAlign: 'center',
   display: 'inline-block',
 };
