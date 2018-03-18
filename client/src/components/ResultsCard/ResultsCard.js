@@ -39,6 +39,7 @@ export default class ResultsCard extends React.Component {
 
       
       <div>
+      <br />
         <Card 
           expanded={this.state.expanded} 
           onExpandChange={this.handleExpandChange}>
