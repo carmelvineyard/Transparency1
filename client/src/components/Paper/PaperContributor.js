@@ -4,7 +4,7 @@ import TableContributor from '../TableSimple/TableContributor';
 
 const style = {
   height:600,
-  width: 450,
+  width: 550,
   margin: 20,
   textAlign: 'center',
   display: 'inline-block',

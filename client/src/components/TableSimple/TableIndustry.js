@@ -42,7 +42,7 @@ export default class TableIndustry extends Component {
           enableSelectAll={this.state.enableSelectAll}
           >
             <TableRow>
-              <TableHeaderColumn>Top Industries to Senator</TableHeaderColumn>
+              <TableHeaderColumn>Top 10 Industry Contributions from recent election</TableHeaderColumn>
               <TableHeaderColumn>Amount</TableHeaderColumn>
             </TableRow>
           </TableHeader>
