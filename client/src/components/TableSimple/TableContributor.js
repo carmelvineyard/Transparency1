@@ -45,7 +45,7 @@ export default class TableContributor extends Component {
             enableSelectAll={this.state.enableSelectAll}
           >
             <TableRow>
-              <TableHeaderColumn>Top Contributors to Senator</TableHeaderColumn>
+              <TableHeaderColumn>Top 10 Contributors from recent election</TableHeaderColumn>
               <TableHeaderColumn>Amount</TableHeaderColumn>
             </TableRow>
           </TableHeader>

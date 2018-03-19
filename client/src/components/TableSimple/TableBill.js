@@ -42,7 +42,7 @@ export default class TableBill extends Component {
           enableSelectAll={this.state.enableSelectAll}
           >
             <TableRow>
-              <TableHeaderColumn>Bill Number</TableHeaderColumn>
+              <TableHeaderColumn>Top 20 Bills</TableHeaderColumn>
               <TableHeaderColumn>Bill Title</TableHeaderColumn>
             </TableRow>
           </TableHeader>

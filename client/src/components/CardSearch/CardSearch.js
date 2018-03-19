@@ -115,7 +115,7 @@ class CardSearch extends Component {
                     indusData={senator.industries}
                     introData={senator.billsIntroduced} />))
                 : null}
-              
+                
             </div>
             {!this.isReadyToRender() && this.state.usState.length > 0 ? <CircularProgress color={"#0e649d"} size={20} /> : null}
             

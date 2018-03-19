@@ -26,3 +26,18 @@
 .title1{
   font-family: 'EB Garamond', serif;
 }
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #424242;
+  color: white;
+  text-align: center;
+}
+
+.small {
+  font-size: 12px;
+  
+}
