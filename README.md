@@ -1,43 +1,44 @@
-# Create React Express App
+# Transparency
 
-## About This Boilerplate
+Your one stop shop to view donor and bill information for state senators
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+[Transparency](https://teamtransparency.herokuapp.com/)
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+## Motivation
 
-## Starting the app locally
+Our motivation for this project is to simplify the process of finding donor and bill information for each state senator all within one app. From there, we wanted to see if there was a relationship between the bills senators introduced and their top contributors and industries.  
 
-Start by installing front and backend dependencies. While in this directory, run the following commands:
+## Tech/framework used
 
-```
-yarn install
-cd client
-yarn install
-cd ..
-``
+<b>Built with</b>
+- React
+- Material UI
+- Node JS
+- Express
+- Axios for AJAX requests
+- OpenSecrets API
+- ProPublica Congress API
+- MongoDB
 
-After both installations complete, run the following command in your terminal:
+## Features
 
-```
-yarn start
-```
+Polished UI and simple to use for an easy and effective user experience. Our one page application has a dropdown for simple state searches. This search functionality calls the OpenSecrets API and ProPublica Congress API.
 
-That's it, your app should be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
+Senators display in an easy to read way complete with contact information, top contributions and industries in their most recent election, and top bills introduced, all with links for more information.
 
-## Deployment (Heroku)
+## API Reference
 
-After confirming that you have an up to date git repository and a Heroku app created, complete the following:
+- [OpenSecrets API](https://www.opensecrets.org/open-data/api)
+- [ProPublica Congress API](https://www.propublica.org/datastore/api/propublica-congress-api)
 
-1. Build the React app for production by running the following command:
+## How to use?
 
-```
-yarn build
-```
-> Note: A yarn build will be required to register any new Post requests from any front-end JavaScript to to prevent any proxy server errors.
+Open our link, and you will find our one page application. Simply search by state from the dropdown menu. The two state senators will display as a card with their contact and website information. You can view the top 10 contributors and amounts as well as the top 10 industries and amounts by simply clicking on the expand button. In addition to the expand button, you can find the top 20 bills introduced by that specific senator with a link for more information regarding a certain bill. At anytime, you may switch the state from the dropdown menu to view senator information you are seeking.
 
-2. Add and commit all changes to git
+## Credits
 
-3. Push to Heroku
-
-If all previous steps were followed correctly, your application should be deployed to Heroku!
+<b>Development Team</b>
+- [Ginger Poole](https://github.com/gingermw)
+- [Carmel Johnson](https://github.com/carmelvineyard)
+- [Darren Evans](https://github.com/darrenrevans10)
+- [Tristan Ernhart](https://github.com/Bobleb)
