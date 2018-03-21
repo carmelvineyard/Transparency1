@@ -33,7 +33,7 @@ Senators display in an easy to read way complete with contact information, top c
 
 ## How to use?
 
-Open our link, and you will find our one page application. Simply search by state from the dropdown menu. The two state senators will display as a card with their contact and website information. You can view the top 10 contributors and amounts as well as the top 10 industries and amounts by simply clicking on the expand button. In addition to the expand button, you can find the top 20 bills introduced by that specific senator with a link for more information regarding a certain bill. At anytime, you may switch the state from the dropdown menu to view senator information you are seeking.
+[Open our link](https://teamtransparency.herokuapp.com/), and you will find our one page application. Simply search by state from the dropdown menu. The two state senators will display as a card with their contact and website information. You can view the top 10 contributors and amounts as well as the top 10 industries and amounts by simply clicking on the expand button. In addition to the expand button, you can find the top 20 bills introduced by that specific senator with a link for more information regarding a certain bill. At anytime, you may switch the state from the dropdown menu to view senator information you are seeking.
 
 ## Credits
 
