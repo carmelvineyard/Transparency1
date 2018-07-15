@@ -33,7 +33,13 @@ function donorSearch(queryURL) {
 
             console.log("candidateNames without: " + candidateNames + " You can do it!");
             console.log("-----------------------");
-         $("#well-section").html(candidateNames);
+
+         for (let index = 0; index < candidateNames.length; index++) {
+             const candidate = $("<p>");
+             candidate.html(candidateNames[index]);
+             $("#well-section").append(candidate);
+             
+         }
     });
 };
 

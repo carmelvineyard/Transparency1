@@ -6,7 +6,7 @@
 const opsKey = "69506b43429a530aad8ad9db12c5d43e";
 
 //Variables to hold our form results:
-let stateInput = $("#state-abbr-select").val();
+var stateInput = $("#state-abbr-select").val();
 let getLegisInput = $("#legis-select").val();
 let legisContribInput = $("#contrib-select").val();
 let legisIndInput = $("#industry-select").val();
@@ -14,7 +14,7 @@ let legisIndInput = $("#industry-select").val();
 //Constant to hold the parts of the API endpoint/call
 const indBase = "https://www.opensecrets.org/api/?method=candIndustry&cid=" + legisIndInput + "&apikey=" + opsKey + "&output=json";
 const contriBase = "https://www.opensecrets.org/api/?method=candContrib&cid=" + legisContribInput + "&apikey=" + opsKey + "&output=json";
-const stateBase = "http://www.opensecrets.org/api/?method=getLegislators&id=" + stateInput + "&apikey=" + opsKey + "&output=json";
+var stateBase = "http://www.opensecrets.org/api/?method=getLegislators&id=" + stateInput + "&apikey=" + opsKey + "&output=json";
 const legisBase = "http://www.opensecrets.org/api/?method=getLegislators&id=" + getLegisInput + "&apikey=" + opsKey + "&output=json";
 
 //FUNCTIONS
@@ -54,7 +54,7 @@ function getSenators(queryURL) {
             $("#well-section").append(senator);
         }
 
-        // senetors.push(respData);
+        // senators.push(respData);
         console.log("queryURL: " + queryURL);
         console.log(senatorsData);
         console.log("-----------------------------");
@@ -105,10 +105,12 @@ $("#contributorButton").on("click", function(event) {
 $("#stateButton").on("click", function(event) {
     event.preventDefault();
     $("#well-section").empty();
-
-    let searchURL = stateBase;
-
-    getSenetors(searchURL);
+    stateInput = $("#state-abbr-select").val();
+    console.log ("stateInput = " + stateInput);
+    console.log ("stateBase = " + stateBase);
+    let searchURL = "http://www.opensecrets.org/api/?method=getLegislators&id=" + stateInput + "&apikey=" + opsKey + "&output=json";
+    console.log ("searchURL = " + searchURL);
+    getSenators(searchURL);
 
 
 });
